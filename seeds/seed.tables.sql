@@ -18,7 +18,7 @@ VALUES
     'test',
     'test',
     -- password = "pass"
-    '!Testtest'
+    '!1Testtest'
   );
 
 INSERT INTO "language" ("id", "name", "user_id")
@@ -27,12 +27,12 @@ VALUES
 
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES
-  (1, 1, 'entraine toi', 'practice', 2),
+  (1, 1, 'amour', 'love', 2),
   (2, 1, 'bonjour', 'hello', 3),
-  (3, 1, 'maison', 'house', 4),
-  (4, 1, 'développeur', 'developer', 5),
-  (5, 1, 'traduire', 'translate', 6),
-  (6, 1, 'incroyable', 'amazing', 7),
+  (3, 1, 'bonheur', 'happiness', 4),
+  (4, 1, 'sourire', 'smile', 5),
+  (5, 1, 'francais', 'french', 6),
+  (6, 1, 'oui', 'yes', 7),
   (7, 1, 'chien', 'dog', 8),
   (8, 1, 'chat', 'cat', null);
 
@@ -45,3 +45,5 @@ SELECT setval('language_id_seq', (SELECT MAX(id) from "language"));
 SELECT setval('user_id_seq', (SELECT MAX(id) from "user"));
 
 COMMIT;
+
+--  psql -U postgres -d spaced-repetition -f ./seeds/seed.tables.sql

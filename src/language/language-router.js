@@ -43,10 +43,16 @@ languageRouter
     }
   })
 
+  // need to implement the language router here
 languageRouter
   .get('/head', async (req, res, next) => {
-    // implement me
-    res.send('implement me!')
+    //code here will call upon services to return the json object below. take in the user id and the database. req.user.id
+    res.json({
+      nextWord: 'nextWord place holder',
+      totalScore: 999,
+      wordCorrectCount: 1,
+      wordIncorrectCount: 3,
+    })
   })
 
 languageRouter
