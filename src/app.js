@@ -20,6 +20,11 @@ app.use('/api/auth', authRouter)
 app.use('/api/language', languageRouter)
 app.use('/api/user', userRouter)
 
+
+app.get('/', (req, res) => {
+  res.send('Hello World! This public route works')
+});
+
 app.use(errorHandler)
 
 module.exports = app
