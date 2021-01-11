@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "spaced-repetition",
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
@@ -9,10 +9,13 @@
     "migrate": "postgrator --config postgrator-config.js",
     "start": "node src/server.js",
     "predeploy": "npm audit",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku master",
+    "migrate-test": "env NODE_ENV=test npm run migrate",
+    "migrate:production": "heroku run npm run migrate",
+    "postdeploy": "npm run migrate:production"
   },
   "keywords": [],
-  "author": "Tom `tomatao` HT <tomht@thinkful.com>",
+  "author": "Ryan",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
