@@ -13,9 +13,7 @@ const app = express()
 app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
   skip: () => NODE_ENV === 'test',
 }))
-app.use(cors({
-  origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000'
-}))
+app.use(cors())
 app.use(helmet())
 
 
